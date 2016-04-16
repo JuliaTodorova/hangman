@@ -11,15 +11,15 @@ public class HangmanCanvas extends Canvas {
     
     final Font hangManFont = new Font("Helvetica", PLAIN, 50);
 
-    boolean startGame = false;
-    boolean makeHead = false;
-    boolean makeBody = false;
-    boolean makeLArm = false;
-    boolean makeRArm = false;
-    boolean makeLLeg = false;
-    boolean makeRLeg = false;
-    char[] word;
-    char[] correctLetters = {};
+    protected boolean startGame = false;
+    protected boolean makeHead = false;
+    protected boolean makeBody = false;
+    protected boolean makeLArm = false;
+    protected boolean makeRArm = false;
+    protected boolean makeLLeg = false;
+    protected boolean makeRLeg = false;
+    protected char[] word;
+    protected char[] correctLetters = {};
 
     public HangmanCanvas(char[] word) {
         super();
