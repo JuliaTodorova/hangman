@@ -21,4 +21,41 @@ public class HangmanCanvas extends Canvas {
     char[] word;
     char[] correctLetters = {};
 
+    public HangmanCanvas(char[] word) {
+        super();
+        this.word = word;
+    }
+
+    public void setStartGame(boolean startGame) {
+        this.startGame = startGame;
+    }
+    
+    public void setMakeHead(boolean makeHead) {
+        this.makeHead = makeHead;
+    }
+    
+    public void setMakeBody(boolean makeBody) {
+        this.makeBody = makeBody;
+    }
+    
+    public void setMakeLArm(boolean makeLArm) {
+        this.makeLArm = makeLArm;
+    }
+    
+    public void setMakeRArm(boolean makeRArm) {
+        this.makeRArm = makeRArm;
+    }
+    
+    public void setMakeLLeg(boolean makeLLeg) {
+        this.makeLLeg = makeLLeg;
+    }
+    
+    public void setMakeRLeg(boolean makeRLeg) {
+        this.makeRLeg = makeRLeg;
+    }
+    
+    public void setCorrectLetters(char [] correctLetters) {
+        this.correctLetters = correctLetters;
+    } 
+
 }
