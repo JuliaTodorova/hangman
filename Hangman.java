@@ -48,4 +48,17 @@ public class Hangman {
             System.out.println("Selection error");
         }
     }
+
+    public Hangman() {
+        this.correctLetters = new CharArrayWriter();
+    }
+
+    public static JFrame hangmanFrame(HangmanCanvas canvas) {
+        JFrame frame = new JFrame("Hangman");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1000,1000);
+        frame.getContentPane().add(canvas);
+        frame.setVisible(true);
+        return frame;
+    }
 }
