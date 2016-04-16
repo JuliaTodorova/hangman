@@ -88,7 +88,6 @@ public class HangmanCanvas extends Canvas {
         }
     }
 
-
     public void drawGallows(Graphics g) {
         g.fillRect(150,100,1,500);
         g.fillRect(150,100,200,1);
@@ -117,6 +116,23 @@ public class HangmanCanvas extends Canvas {
     
     public void drawRightLeg(Graphics g) {
         g.drawLine(350,500,390,550);
+    }
+
+    public void dashOrLetter(Graphics g) {
+        int x = 200;
+        for ( int i = 0; i < this.word.length; i++) {
+            char currentLetter = this.word[i];
+            if (shouldDrawLetter(currentLetter, this.correctLetters)) {
+                String letter = "" + currentLetter;
+                g.setFont(hangManFont);
+                g.setColor(Color.WHITE);
+                g.drawString(letter, x, 650);
+            }
+            else {
+                g.fillRect(x, 650, 50, 1);
+            }
+            x = x + 70;
+        }
     }
 
 }
