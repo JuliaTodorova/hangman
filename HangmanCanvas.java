@@ -88,4 +88,35 @@ public class HangmanCanvas extends Canvas {
         }
     }
 
+
+    public void drawGallows(Graphics g) {
+        g.fillRect(150,100,1,500);
+        g.fillRect(150,100,200,1);
+        g.fillRect(350,100,1,100);
+    }
+    
+    public void drawHead(Graphics g) {
+        g.drawOval(305,200,100,100);
+    }
+    
+    public void drawBody(Graphics g) {
+        g.fillRect(350,300,1,200);
+    }
+    
+    public void drawLeftArm(Graphics g) {
+        g.fillRect(350,350,50,1);
+    }
+    
+    public void drawRightArm(Graphics g) {
+        g.fillRect(300,350,50,1);
+    }
+    
+    public void drawLeftLeg(Graphics g) {
+        g.drawLine(350,500,310,550);
+    }
+    
+    public void drawRightLeg(Graphics g) {
+        g.drawLine(350,500,390,550);
+    }
+
 }
