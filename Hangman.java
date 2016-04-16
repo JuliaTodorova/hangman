@@ -61,4 +61,20 @@ public class Hangman {
         frame.setVisible(true);
         return frame;
     }
+
+    private char[] wordDir() {
+        String[] words = {"round",
+                          "contradict",
+                          "spout",
+                          "generator",
+                          "chapter",
+                          "newsletter",
+                          "security",
+                          "gig",
+                          "figure",
+                          "assigning"};
+        Random random = new Random();
+        char [] wordCharArray = words[random.nextInt(words.length)].toCharArray();
+        return wordCharArray;
+    }
 }
