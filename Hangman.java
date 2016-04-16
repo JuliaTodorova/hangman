@@ -16,4 +16,36 @@ public class Hangman {
     protected int lives = 6;
     protected HangmanCanvas canvas;
 
+    public char[] getWord() {
+        return this.word;
+    }
+
+    public static void main(String[] args) {
+
+        Boolean quit = false;
+
+        System.out.println("Welcome to hangman!");
+        System.out.println("Rules of the game:");
+        System.out.println("Your job is to try to find out the secret word, by guessing one letter at\n" +
+                            "a time. But beware! If you incorrectly select a letter that is not in\n" +
+                            "the secret word, you will be one step closer to hanging on the gallows!\n" +
+                            "The secret word is made up of letters a-z. ");
+        System.out.println("Do you want to play? Enter ‘q’ to quit, ‘p’ to play");
+
+        Scanner scan = new Scanner(System.in);
+        String play = scan.nextLine();
+
+
+        if(play.equals("q")) {
+            quit = true;
+            System.out.println("K, thanks, bye!");
+        }
+        else if(play.equals("p")) {
+            Hangman game = new Hangman();
+            game.playGame();
+        }
+        else {
+            System.out.println("Selection error");
+        }
+    }
 }
