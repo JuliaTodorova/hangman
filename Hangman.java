@@ -103,6 +103,12 @@ public class Hangman {
        }
     }
 
-
-
+    public boolean checkInput(char input) {
+        for (int i = 0; i < this.word.length; i++) {
+            if(this.word[i] == input) { 
+                return true;
+            }
+        }
+        return false;
+    }
 }
