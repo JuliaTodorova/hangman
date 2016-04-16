@@ -77,4 +77,32 @@ public class Hangman {
         char [] wordCharArray = words[random.nextInt(words.length)].toCharArray();
         return wordCharArray;
     }
+
+    public void playGame() {
+        Scanner scanInput = new Scanner(System.in);
+
+        this.word = wordDir();
+        this.canvas = new HangmanCanvas(this.word);
+        JFrame frame = hangmanFrame(canvas);
+        this.canvas.setStartGame(true);
+        System.out.println("Let's play");
+        while(this.lives > 0) {
+           System.out.println("Pick a letter (a-z):");
+           String input = scanInput.nextLine();
+           char firstLetter = input.charAt(0);
+           if(checkInput(firstLetter)) {
+               System.out.println("Good guess!");
+               this.correctLetters.append(firstLetter);
+               this.canvas.setCorrectLetters(correctLetters.toCharArray());
+               this.canvas.repaint();
+           }
+           else {
+                redrawCanvas(canvas);
+                this.lives--;
+           }
+       }
+    }
+
+
+
 }
