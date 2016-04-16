@@ -135,4 +135,12 @@ public class HangmanCanvas extends Canvas {
         }
     }
 
+    public boolean shouldDrawLetter(char letter, char[] correctLetters) {    
+        for(int i = 0; i < correctLetters.length; i++) {
+            if(letter == correctLetters[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
