@@ -58,4 +58,34 @@ public class HangmanCanvas extends Canvas {
         this.correctLetters = correctLetters;
     } 
 
+    @Override
+    public void paint (Graphics g) {
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, this.getWidth(), this.getHeight());
+        g.setColor(Color.WHITE);
+        
+        if(this.startGame) {
+            drawGallows(g);
+            dashOrLetter(g);
+            if(makeHead) {
+                drawHead(g);
+                if(makeBody) {
+                    drawBody(g);
+                    if(makeLArm) {
+                        drawLeftArm(g);
+                        if(makeRArm) {
+                            drawRightArm(g);
+                            if(makeLLeg) {
+                                drawLeftLeg(g);
+                                if(makeRLeg) {
+                                    drawRightLeg(g);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
