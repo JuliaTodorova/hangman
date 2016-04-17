@@ -111,4 +111,41 @@ public class Hangman {
         }
         return false;
     }
+
+    private void redrawCanvas(HangmanCanvas canvas) {
+        switch(this.lives) {
+            case 6:
+                System.out.println("Try again!");
+                canvas.setMakeHead(true);
+                canvas.repaint();
+                break;
+            case 5:
+                System.out.println("Try again!");
+                canvas.setMakeBody(true);
+                canvas.repaint();
+                break;
+            case 4:
+                System.out.println("Try again!");
+                canvas.setMakeLArm(true);
+                canvas.repaint();
+                break;
+            case 3:
+                System.out.println("Try again!");
+                canvas.setMakeRArm(true);
+                canvas.repaint();
+                break;
+            case 2:
+                System.out.println("Last Try!");
+                canvas.setMakeLLeg(true);
+                canvas.repaint();
+                break;
+            case 1:
+                canvas.setMakeRLeg(true);
+                canvas.repaint();
+                System.out.println("You lost!");
+                break;
+            default:
+                break;
+        }
+    }
 }
